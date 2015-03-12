@@ -8,9 +8,13 @@ clean           = require 'gulp-clean'
 
 outputJsName = "angular-bootstrap-split-dropdown"
 
-gulp.task 'default', ['coffee', 'concatjs', 'uglifyjs'], ->
+gulp.task 'default', ['build'], ->
   gulp.src './build'
     .pipe clean()
+
+gulp.task 'build', ['buildjs'] # will add cacheTemplate
+
+gulp.task 'buildjs', ['coffee', 'concatjs', 'uglifyjs']
 
 gulp.task 'coffee', ->
   gulp.src ['./src/js/app.coffee', './src/js/*.coffee']
