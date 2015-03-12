@@ -1,14 +1,19 @@
 # Load dependencies
+del             = require 'del'
 gulp            = require 'gulp'
 gutil           = require 'gulp-util'
 coffee          = require 'gulp-coffee'
 concat          = require 'gulp-concat'
 uglify          = require 'gulp-uglify'
-del             = require 'del'
+templateCache   = require 'gulp-angular-templatecache'
 
 outputJsName = "angular-bootstrap-split-dropdown"
 
 gulp.task 'default', ['build'], ->
+  del ['./build/**/*', './build'], (error, deletedFiles) ->
+    console.log "Deleted: #{file}" for file in deletedFiles
+
+gulp.task 'clean', ->
   del ['./build/**/*', './build'], (error, deletedFiles) ->
     console.log "Deleted: #{file}" for file in deletedFiles
 
@@ -21,7 +26,7 @@ gulp.task 'coffee', ->
     .pipe coffee().on('error', gutil.log)
     .pipe gulp.dest './build/js/'
 
-gulp.task 'concatjs', ['coffee'], ->
+gulp.task 'concatjs', ['coffee', 'ng-templatecache'], ->
   gulp.src './build/js/**/*.js'
     .pipe concat "#{outputJsName}.js"
     .pipe gulp.dest './dist/js/'
@@ -31,3 +36,8 @@ gulp.task 'uglifyjs', ['concatjs'], ->
     .pipe concat "#{outputJsName}.min.js"
     .pipe uglify()
     .pipe gulp.dest './dist/js/'
+
+gulp.task 'ng-templatecache', ->
+  gulp.src './src/templates/**/*.html'
+    .pipe templateCache(module: 'terebinth.bootstrapSplitDropdown')
+    .pipe gulp.dest('./build/js/')

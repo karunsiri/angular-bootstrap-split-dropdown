@@ -1,1 +1,1 @@
-angular.module('karunsiri.bootstrapSplitDropdown', [])
+angular.module('terebinth.bootstrapSplitDropdown', [])
