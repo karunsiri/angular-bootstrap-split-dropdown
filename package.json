@@ -12,7 +12,8 @@
     "gulp-coffee": "latest",
     "gulp-concat": "latest",
     "gulp-uglify": "latest",
-    "gulp-rename": "latest"
+    "gulp-rename": "latest",
+    "gulp-clean": "latest"
   },
   "private": true,
   "license": "MIT"
