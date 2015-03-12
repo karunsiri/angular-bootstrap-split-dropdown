@@ -4,13 +4,13 @@ gutil           = require 'gulp-util'
 coffee          = require 'gulp-coffee'
 concat          = require 'gulp-concat'
 uglify          = require 'gulp-uglify'
-clean           = require 'gulp-clean'
+del             = require 'del'
 
 outputJsName = "angular-bootstrap-split-dropdown"
 
 gulp.task 'default', ['build'], ->
-  gulp.src './build'
-    .pipe clean()
+  del ['./build/**/*', './build'], (error, deletedFiles) ->
+    console.log "Deleted: #{file}" for file in deletedFiles
 
 gulp.task 'build', ['buildjs'] # will add cacheTemplate
 

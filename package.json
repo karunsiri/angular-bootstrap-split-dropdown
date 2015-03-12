@@ -13,7 +13,8 @@
     "gulp-concat": "latest",
     "gulp-uglify": "latest",
     "gulp-rename": "latest",
-    "gulp-clean": "latest"
+    "del": "latest",
+    "gulp-angular-templatecache": "latest"
   },
   "private": true,
   "license": "MIT"
