@@ -1,1 +1,1 @@
-appModule = angular.module('karunsiri.bootstrapSplitDropdown', [])
+angular.module('karunsiri.bootstrapSplitDropdown', [])

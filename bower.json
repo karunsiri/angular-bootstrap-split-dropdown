@@ -5,6 +5,9 @@
     "Karun Siri <karoon.siri@gmail.com>"
   ],
   "description": "AngularJS support for Bootstrap's split dropdown button",
+  "main": [
+    "dist/js/angular-bootstrap-split-dropdown.min.js"
+  ],
   "license": "MIT",
   "private": true,
   "ignore": [
