@@ -1,0 +1,19 @@
+{
+  "name": "angular-bootstrap-split-dropdown",
+  "version": "0.0.1",
+  "description": "AngularJS support for Bootstrap's split dropdown button",
+  "author": "Karun Siritheerathamrong <karoon.siri@gmail.com>",
+  "devDependencies": {
+    "bower": "latest",
+    "bower-installer": "latest",
+    "coffee-script": "latest",
+    "gulp": "latest",
+    "gulp-util": "latest",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-uglify": "latest",
+    "gulp-rename": "latest"
+  },
+  "private": true,
+  "license": "MIT"
+}
