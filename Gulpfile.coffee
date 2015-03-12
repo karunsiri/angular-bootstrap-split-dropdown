@@ -41,3 +41,6 @@ gulp.task 'ng-templatecache', ->
   gulp.src './src/templates/**/*.html'
     .pipe templateCache(module: 'terebinth.bootstrapSplitDropdown')
     .pipe gulp.dest('./build/js/')
+
+gulp.task 'lint-watcher', ->
+  gulp.watch './src/**/*', ['build']
